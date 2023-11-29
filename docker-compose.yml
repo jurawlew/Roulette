@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  roulette:
+    build: .
+    restart: always
+    container_name: roulette
+    environment:
+      TZ: Europe/Moscow
+    volumes:
+      - /home/get/logs_all/roulette/:/app/_logs/
+    command: python Roulette/manage.py runserver 0.0.0.0:8000
